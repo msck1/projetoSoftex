@@ -6,10 +6,7 @@ import { ConversationChain } from "langchain/chains";
 import { createClient } from 'redis';
 
 const client = createClient({ // criando conexao com banco redis para que a api lembre do contexto da conversaa
-    password: 'zB8FQIt2GZkXwXgcU2yrdCh9NYjQbZbU',
-    socket: {
-        host: 'redis-12407.c308.sa-east-1-1.ec2.redns.redis-cloud.com',
-        port: 12407
+    
     }
 });
 
