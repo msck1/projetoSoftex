@@ -1,5 +1,7 @@
 /node modules
-.env
+/node_modules
+node modules
 node_modules
+.env
 chroma
 chroma.log
