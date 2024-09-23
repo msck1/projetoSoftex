@@ -10,6 +10,6 @@ npm install
 
 Configure as chaves de API no arquivo dotenv, [siga essas instruções para criar um banco de dados redis](https://redis.io/docs/latest/operate/rc/rc-quickstart/).
 
-
+Inicie o Chroma com chroma run --path ./chroma
 
 Ver requirements.txt para ver todas as dependências
