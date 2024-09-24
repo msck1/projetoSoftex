@@ -5,12 +5,12 @@ import { ChatOpenAI } from "@langchain/openai";
 import { ConversationChain } from "langchain/chains";
 import { createClient } from 'redis';
 
-
-const client = createClient({ // criando conexao com banco redis para que a api lembre do contexto da conversaa
-    password: 'gU6NAhdRkxOmBUixr4jyAXMnLkUG5tux',
+// inserir dados do banco
+const client = createClient({ // criando conexao com banco redis para que a api lembre do contexto da conversa
+    password: '',
     socket: {
-        host: 'redis-10511.c308.sa-east-1-1.ec2.redns.redis-cloud.com',
-        port: 10511
+        host: '',
+        port: 1
     }
 });
 
@@ -18,7 +18,7 @@ const conexao = await client.connect();
 
 const memory = new BufferMemory({ // faz a memory do chat 
     chatHistory: new RedisChatMessageHistory({
-        sessionId: '2',
+        sessionId: '1',
         sessionTTL: 300,
         client,
     }),
