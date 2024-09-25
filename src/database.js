@@ -1,5 +1,4 @@
 import "dotenv/config"
-import { ChromaClient } from "chromadb";
 import { Chroma } from "@langchain/community/vectorstores/chroma"
 import { OpenAIEmbeddings } from "@langchain/openai"
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
@@ -21,34 +20,25 @@ const splitter = new RecursiveCharacterTextSplitter({
 
 const chunks = await splitter.splitDocuments(docs);
 
-console.log(chunks)
-
-console.log(docs)
-
-console.log(splitter)
-
-eddings( chunks, { // faz o embedding
+const embeddings = new OpenAIEmbeddings({ // faz o embedding
   openAIApiKey: process.env.OPENAI_API_KEY,
   model: "text-embedding-3-large",
   azureOpenAIApiKey: "",
 })
 
-const vectorStore = new ChromaClient() // cria cliente chroma
-
-await vectorStore.deleteCollection({ // deleta cliente chroma
-  name: "colecaocerta"
+const vectorStore = new Chroma(embeddings, {
+  collectionName: "Banco_Vetores"
 })
 
-const collection = await vectorStore.createCollection({ // cria coleçao
-  name: "colecaocerta",
-  metadata: {
-    "descricao": "primeira_colecao"
-  },
-  embeddingFunction: embeddings
-})
+// codigo comentado abaixo é para testar que os chunks foram adicionados ao chroma e buscar eles depois
 
-const collections = await vectorStore.listCollections() // lista todas coleçoes
+// const adicionar = await vectorStore.addDocuments(chunks)
 
-console.log(collections)
+// const buscar = await vectorStore.similaritySearch("Oque é a lei do bem", 3);
 
-console.log(collection)
+// for (const doc of buscar) {
+//   console.log(`*${doc.pageContent} [${JSON.stringify(doc.metadata, null)}]`)
+  
+// }
+
+export { vectorStore }

@@ -22,6 +22,7 @@
     "chromadb-default-embed": "^2.13.2",
     "dotenv": "^16.4.5",
     "ioredis": "^5.4.1",
+    "langchain": "^0.3.2",
     "llamaindex": "^0.6.5",
     "redis": "^4.7.0"
   }

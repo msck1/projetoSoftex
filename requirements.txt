@@ -3,6 +3,7 @@
 @langchain/openai 
 @langchain/redis
 @langchain/textsplitter
+langchain
 redis
 dotenv
 ioredis
