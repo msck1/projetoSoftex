@@ -19,7 +19,7 @@ npm install
 5. Inicie o banco de dados com o comando abaixo, use um terminal para o Chroma e outro para o Node.
 
 ```javascript
-Chroma com chroma run --path ./chroma
+Chroma run --path ./chroma
 ```
 
 6. Rode o arquivo database.js para popular o chroma com os arquivos da pasta txt.
