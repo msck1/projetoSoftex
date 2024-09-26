@@ -14,6 +14,10 @@ Como executar o programa:
 npm install
 ```
 
+```python
+pip install chromadb
+```
+
 4. Navegue até a pasta src e crie um arquivo dotenv e configure as chaves de API no arquivo dotenv e as configure corretamente no arquvi configDotEnv.js, as chaves são OpenAI, Llama Cloud e LangSmith para fazer o tracing. 
 
 5. Inicie o banco de dados com o comando abaixo, use um terminal para o Chroma e outro para o Node.
