@@ -34,7 +34,7 @@ const vectorStore = new Chroma(embeddings, { // declara o banco chroma e o seu n
 
 // const adicionar = await vectorStore.addDocuments(chunks) // adiciona os chunks já vetorizados ao chroma
 
-// esta parte testa a busca no banco e retorna 3 resultados mais similiras, depois imprime o resultado e sua fonte
+// // esta parte testa a busca no banco e retorna 3 resultados mais similiras, depois imprime o resultado e sua fonte
 // const buscar = await vectorStore.similaritySearch("Oque é a lei do bem", 3);
 
 // for (const doc of buscar) {
